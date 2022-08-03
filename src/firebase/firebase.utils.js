@@ -22,8 +22,7 @@ import {
 
 const firebaseConfig = {
   apiKey: "AIzaSyAZ7xEGjuy7mnHNytaRmRa9gEUD6cDIj7U",
-  authDomain: "shimmering-donut-8c1da6.netlify.app",
-  // authDomain: "crwn-clothing-db-602bf.firebaseapp.com",
+  authDomain: "crwn-clothing-db-602bf.firebaseapp.com",
   projectId: "crwn-clothing-db-602bf",
   storageBucket: "crwn-clothing-db-602bf.appspot.com",
   messagingSenderId: "110512849550",
