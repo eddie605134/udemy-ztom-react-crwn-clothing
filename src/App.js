@@ -11,20 +11,24 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Routes, Route } from 'react-router-dom'
 
-import { onAuthStateChangedListener, createUserDocumentFromAuth } from './firebase/firebase.utils.js'
-import { setCurrentUser } from './store/user/user.action'
+// import { getCurrentUser } from './firebase/firebase.utils.js'
+import { checkCurrentUserSession } from './store/user/user.action'
 
 const App = () => {
 
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    const unsubcribe = onAuthStateChangedListener((user) => {
-      if (user) createUserDocumentFromAuth(user)
-      dispatch(setCurrentUser(user))
-    })
+  // 用useEffect加原生firebase寫法
+  // useEffect(() => {
+  //   const unsubcribe = onAuthStateChangedListener((user) => {
+  //     if (user) createUserDocumentFromAuth(user)
+  //     dispatch(setCurrentUser(user))
+  //   })
 
-    return unsubcribe
+  //   return unsubcribe
+  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(checkCurrentUserSession())
   }, [dispatch]);
 
   return (

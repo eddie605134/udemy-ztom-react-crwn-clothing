@@ -3,15 +3,17 @@ import { useSelector } from 'react-redux'
 
 import { useState, useEffect } from 'react'
 // import { CategoriesContext } from '../../contexts/categories.context'
-import { selectorCategoriesMap } from '../../store/categories/category.selector.js'
+import { selectorCategoriesMap, selectCategoriesIsLoading } from '../../store/categories/category.selector.js'
 
 import ProductCard from '../../components/product-card/product-card.component'
+import Spinner from '../../components/spinner/spinner.components'
 import './category.style.scss'
 
 const Category = () => {
   const { category } = useParams()
   // const { categoriesMap } = useContext(CategoriesContext)
   const categoriesMap = useSelector(selectorCategoriesMap)
+  const isLoading = useSelector(selectCategoriesIsLoading)
 
   const [products, setProducts] = useState([])
 
@@ -22,11 +24,16 @@ const Category = () => {
   return (
     <>
       <h2 className="category-title">{category}</h2>
-      <div className="category-container">
-        {
-          products && products.map(product => <ProductCard key={product.id} product={product} />)
-        }
-      </div>
+      {
+        isLoading 
+          ? <Spinner />
+          : (<div className="category-container">
+              {
+                products && products.map(product => <ProductCard key={product.id} product={product} />)
+              }
+            </div>
+            )
+      }
     </>
     
   )
