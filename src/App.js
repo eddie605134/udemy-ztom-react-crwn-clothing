@@ -1,11 +1,11 @@
 import './App.css';
 
 
-import Home from './routes/home/home.component.jsx'
-import Navigation from './routes/navigation/navigation.component.jsx'
-import Authentication from './routes/authentication/authentication.component.jsx'
-import CheckOut from './routes/checkout/checkout.component.jsx'
-import Shop from './routes/shop/shop.component.jsx'
+import Home from './routes/home/home.component'
+import Navigation from './routes/navigation/navigation.component'
+import Authentication from './routes/authentication/authentication.component'
+import CheckOut from './routes/checkout/checkout.component'
+import Shop from './routes/shop/shop.component'
 
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'

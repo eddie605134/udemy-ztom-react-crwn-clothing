@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import CategoriesPreview from '../categories-preview/categories-preview.component'
 import Category from '../category/category.component'
-import { fetchCategoriesStart } from '../../store/categories/category.action.js'
+import { fetchCategoriesStart } from '../../store/categories/category.action'
 
 import './shop.style.scss'
 
