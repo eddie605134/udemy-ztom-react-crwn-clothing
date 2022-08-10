@@ -12,7 +12,6 @@ import { selectCartItems } from '../../store/cart/cart.selector'
 
 import { 
   CheckoutItemContainer, 
-  Quantity,
   ImageContainer,
   RemoveButton
 } from './checkout-item.style'
@@ -41,7 +40,7 @@ const CheckoutItem: FC<CheckProps> = ({cartItem}) => {
         <img src={imageUrl} alt={name} />
       </ImageContainer>
       <span className="name">{name}</span>
-      <Quantity>
+      <span className="quantity">
         <div 
           className="arrow" 
           onClick={removeFromCartHandler}
@@ -55,7 +54,7 @@ const CheckoutItem: FC<CheckProps> = ({cartItem}) => {
         >
           &#10095;
         </div>
-      </Quantity>
+      </span>
       <span className="price">{price}</span>
       <RemoveButton 
         onClick={clearItemHandler}

@@ -9,21 +9,21 @@ export const CheckoutItemContainer = styled.div`
   font-size: 20px;
   align-items: center;
 
+  .quantity {
+    display: flex;
+    .arrow {
+      cursor: pointer;
+    }
+
+    .value {
+      margin: 0 10px;
+    }
+  }
+
   .name,
   .quantity,
   .price {
     width: 23%;
-  }
-`
-export const Quantity = styled.span`
-  display: flex;
-
-  .arrow {
-    cursor: pointer;
-  }
-
-  .value {
-    margin: 0 10px;
   }
 `
 export const ImageContainer = styled.div`
